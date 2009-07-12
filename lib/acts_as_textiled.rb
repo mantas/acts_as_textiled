@@ -33,10 +33,6 @@ module Err
                     CGI.escapeHTML(match)
                   end
 
-                  str = auto_link(str, :all) do |txt|
-                    txt.size < 55 ? txt : truncate(txt, :length => 50)
-                  end
-
                   str = RedCloth.new(str, Array(ruled[attribute])).to_html
 
                   # preserve whitespace for haml
